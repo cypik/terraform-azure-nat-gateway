@@ -24,7 +24,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 ```hcl
 module "nat_gateway" {
   depends_on          = [module.resource_group, module.vnet]
-  source              = "git::https://github.com/opz0/terraform-azure-nat-gateway.git?ref=v1.0.0"
+  source              = "git::https://github.com/cypik/terraform-azure-nat-gateway.git?ref=v1.0.0"
   name                = "app"
   environment         = "test"
   location            = module.resource_group.resource_group_location
@@ -50,10 +50,10 @@ This module provides the following outputs:
 - 'resource_guid':  The resource GUID property of the NAT Gateway.
 
 # Examples
-For detailed examples on how to use this module, please refer to the 'examples' directory within this repository.
+For detailed examples on how to use this module, please refer to the '[example](https://github.com/cypik/terraform-azure-nat-gateway/blob/master/_example)' directory within this repository.
 
 # License
-This Terraform module is provided under the '[License Name]' License. Please see the [LICENSE](https://github.com/opz0/terraform-azure-nat-gateway/blob/readme/LICENSE) file for more details.
+This Terraform module is provided under the '[License Name]' License. Please see the [LICENSE](https://github.com/cypik/terraform-azure-nat-gateway/blob/master/LICENSE) file for more details.
 
 # Author
 Your Name
