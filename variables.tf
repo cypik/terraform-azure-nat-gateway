@@ -1,6 +1,6 @@
 variable "repository" {
   type        = string
-  default     = ""
+  default     = "https://github.com/cypik/terraform-azure-nat-gateway"
   description = "Terraform current module repo"
 }
 
@@ -12,8 +12,8 @@ variable "label_order" {
 
 variable "managedby" {
   type        = string
-  default     = ""
-  description = "ManagedBy, eg 'ops0'."
+  default     = "cypik"
+  description = "ManagedBy, eg 'cypik'."
 }
 
 variable "location" {
