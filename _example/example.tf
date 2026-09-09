@@ -4,7 +4,7 @@ provider "azurerm" {
 
 module "resource_group" {
   source      = "cypik/resource-group/azure"
-  version     = "1.0.1"
+  version     = "1.0.3"
   name        = "app"
   environment = "test"
   location    = "North Europe"
@@ -12,7 +12,7 @@ module "resource_group" {
 
 module "vnet" {
   source              = "cypik/vnet/azure"
-  version             = "1.0.1"
+  version             = "1.0.3"
   name                = "app"
   environment         = "test"
   resource_group_name = module.resource_group.resource_group_name
@@ -22,7 +22,7 @@ module "vnet" {
 
 module "subnet" {
   source               = "cypik/subnet/azure"
-  version              = "1.0.1"
+  version              = "1.0.3"
   name                 = "app"
   environment          = "test"
   resource_group_name  = module.resource_group.resource_group_name
@@ -46,7 +46,7 @@ module "subnet" {
 }
 module "nat_gateway" {
   depends_on          = [module.resource_group, module.vnet]
-  source              = "./../."
+  source              = "./../"
   name                = "app"
   environment         = "test"
   location            = module.resource_group.resource_group_location

@@ -24,7 +24,7 @@ for creating AZURE resources, and you can customize the inputs as needed. Below 
 module "nat_gateway" {
   depends_on          = [module.resource_group, module.vnet]
   source              = "cypik/nat-gateway/azure"
-  version             = "1.0.1"
+  version             = "1.0.2"
   name                = "app"
   environment         = "test"
   location            = module.resource_group.resource_group_location
@@ -49,20 +49,20 @@ Replace **MIT** and **Cypik** with the appropriate license and your information.
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.6 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.87.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.15.8 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 5.4.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >=3.87.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 5.4.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/azure | 1.0.1 |
+| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/azure | 1.0.3 |
 
 ## Resources
 
@@ -78,14 +78,14 @@ Replace **MIT** and **Cypik** with the appropriate license and your information.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_azurerm_subnet_nat_gateway_association_enabled"></a> [azurerm\_subnet\_nat\_gateway\_association\_enabled](#input\_azurerm\_subnet\_nat\_gateway\_association\_enabled) | n/a | `bool` | `true` | no |
-| <a name="input_create_nat_gateway"></a> [create\_nat\_gateway](#input\_create\_nat\_gateway) | n/a | `bool` | `true` | no |
+| <a name="input_azurerm_subnet_nat_gateway_association_enabled"></a> [azurerm\_subnet\_nat\_gateway\_association\_enabled](#input\_azurerm\_subnet\_nat\_gateway\_association\_enabled) | Whether to associate the given subnets with the NAT Gateway. | `bool` | `true` | no |
+| <a name="input_create_nat_gateway"></a> [create\_nat\_gateway](#input\_create\_nat\_gateway) | Whether to create the NAT Gateway resource. | `bool` | `true` | no |
 | <a name="input_create_public_ip"></a> [create\_public\_ip](#input\_create\_public\_ip) | Should we create a public IP or not? | `bool` | `true` | no |
-| <a name="input_enabled"></a> [enabled](#input\_enabled) | n/a | `bool` | `true` | no |
+| <a name="input_enabled"></a> [enabled](#input\_enabled) | Flag to control whether module resources are created. | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Project environment | `string` | `""` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
 | <a name="input_location"></a> [location](#input\_location) | Azure region to use | `string` | `""` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'cypik'. | `string` | `"cypik"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'info@cypik.com' | `string` | `"info@cypik.com"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_nat_gateway_idle_timeout"></a> [nat\_gateway\_idle\_timeout](#input\_nat\_gateway\_idle\_timeout) | Idle timeout configuration in minutes for Nat Gateway | `number` | `4` | no |
 | <a name="input_public_ip_ids"></a> [public\_ip\_ids](#input\_public\_ip\_ids) | List of public ips to use. Create one ip if not provided | `list(string)` | `[]` | no |
