@@ -2,6 +2,7 @@ output "id" {
   value       = join("", azurerm_nat_gateway.natgw[*].id)
   description = "The ID of the NAT Gateway."
 }
+
 output "resource_guid" {
   value       = join("", azurerm_nat_gateway.natgw[*].id)
   description = "The resource GUID property of the NAT Gateway."

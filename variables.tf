@@ -12,14 +12,14 @@ variable "label_order" {
 
 variable "managedby" {
   type        = string
-  default     = "cypik"
-  description = "ManagedBy, eg 'cypik'."
+  default     = "info@cypik.com"
+  description = "ManagedBy, eg 'info@cypik.com'"
 }
 
 variable "location" {
-  description = "Azure region to use"
   type        = string
   default     = ""
+  description = "Azure region to use"
 }
 
 variable "name" {
@@ -29,58 +29,61 @@ variable "name" {
 }
 
 variable "environment" {
-  description = "Project environment"
   type        = string
   default     = ""
+  description = "Project environment"
 }
 
 variable "resource_group_name" {
-  description = "Name of the resource group to use"
   type        = string
   default     = ""
+  description = "Name of the resource group to use"
 }
 
 variable "public_ip_zones" {
-  description = "Public ip Zones to configure."
   type        = list(string)
   default     = null
+  description = "Public ip Zones to configure."
 }
 
 variable "public_ip_ids" {
-  description = "List of public ips to use. Create one ip if not provided"
   type        = list(string)
   default     = []
+  description = "List of public ips to use. Create one ip if not provided"
 }
 
 variable "create_public_ip" {
-  description = "Should we create a public IP or not?"
   type        = bool
   default     = true
+  description = "Should we create a public IP or not?"
 }
 
 variable "nat_gateway_idle_timeout" {
-  description = "Idle timeout configuration in minutes for Nat Gateway"
   type        = number
   default     = 4
+  description = "Idle timeout configuration in minutes for Nat Gateway"
 }
 
 variable "subnet_ids" {
-  description = "Ids of subnets to associate with the Nat Gateway"
   type        = string
   default     = ""
+  description = "Ids of subnets to associate with the Nat Gateway"
 }
 
 variable "create_nat_gateway" {
-  type    = bool
-  default = true
+  type        = bool
+  default     = true
+  description = "Whether to create the NAT Gateway resource."
 }
 
 variable "azurerm_subnet_nat_gateway_association_enabled" {
-  type    = bool
-  default = true
+  type        = bool
+  default     = true
+  description = "Whether to associate the given subnets with the NAT Gateway."
 }
 
 variable "enabled" {
-  type    = bool
-  default = true
+  type        = bool
+  default     = true
+  description = "Flag to control whether module resources are created."
 }
